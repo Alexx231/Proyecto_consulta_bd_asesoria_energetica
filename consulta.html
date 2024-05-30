@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Examen Alejandro Pawlukiewicz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/icono.webp">
+</head>
+
+<body>
+    <header class="bg-primary text-white p-3">
+        <h1 class="text-center">Gestion Empresarial</h1>
+    </header>
+    <div class="container mt-3">
+        <form id="busquedaForm" class="bg-light p-3 rounded">
+            <h2 class="text-center mb-3">Búsqueda</h2>
+            <div class="form-group">
+                <label for="campo">Campo a buscar</label>
+                <select class="form-control" id="campo" onchange="mostrarCampo()">
+                    <option value="">Selecciona un campo</option>
+                    <option value="cif">CIF</option>
+                    <option value="nombre">Nombre</option>
+                    <option value="estado">Estado</option>
+                    <option value="comercializadora">Comercializadora</option>
+                </select>
+            </div>
+            <div id="cif" class="form-group campo-busqueda" style="display: none;">
+                <label for="cif-input">CIF</label>
+                <input type="text" class="form-control" id="cif-input">
+            </div>
+            <div id="nombre" class="form-group campo-busqueda" style="display: none;">
+                <label for="nombre-input">Nombre</label>
+                <input type="text" class="form-control" id="nombre-input">
+            </div>
+            <div id="estado" class="form-group campo-busqueda" style="display: none;">
+                <label for="estado-input">Estado</label>
+                <input type="text" class="form-control" id="estado-input">
+            </div>
+            <div id="comercializadora" class="form-group campo-busqueda" style="display: none;">
+                <label for="comercializadora-input">Comercializadora</label>
+                <input type="text" class="form-control" id="comercializadora-input">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Buscar</button>
+            <button type="button" class="btn btn-secondary btn-block" id="mostrarGrafica">Mostrar/Ocultar
+                Gráfica</button>
+        </form>
+    </div>
+    <div class="container mt-3" id="resultados">
+        <!-- Los resultados de la búsqueda se insertarán aquí -->
+    </div>
+    <div class="container mt-3" id="graficaContainer" style="display: none;">
+        <canvas id="grafica"></canvas>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+
+</html>

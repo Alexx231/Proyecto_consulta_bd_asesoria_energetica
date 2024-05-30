@@ -1,0 +1,157 @@
+body {
+    background: linear-gradient(90deg, #fafafa, #6c5ce7, #3498db);
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    background: linear-gradient(90deg, #6c5ce7, #3498db); /* Mantén el degradado, pero considera cambiar los colores para que coincidan con tu nueva paleta */
+    color: #fff;
+    padding: 40px 0; /* Más espaciado */
+    text-align: center;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+    position: relative;
+}
+
+h1 {
+    font-size: 3em; /* Un tamaño de fuente más grande para los títulos */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+#busquedaForm {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 30px; /* Más espaciado */
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+    margin: 40px 0; /* Más espaciado */
+    transition: box-shadow 0.3s ease;
+}
+
+/* Agrega una transición suave al color de fondo del botón */
+#busquedaForm button {
+    background-color: #6c5ce7;
+    color: #fff;
+    border: none;
+    padding: 15px 30px; /* Más espaciado */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#busquedaForm button:hover {
+    background-color: #3498db;
+}
+
+#busquedaForm .form-group {
+    margin-bottom: 15px;
+}
+
+#busquedaForm .form-group label {
+    font-weight: bold;
+    color: #6c5ce7; /* Cambia el color del texto a un púrpura suave para que coincida con el encabezado */
+}
+
+#busquedaForm .form-group input,
+#busquedaForm .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+}
+
+#busquedaForm button {
+    background-color: #6c5ce7; /* Cambia el color de fondo a un púrpura suave para que coincida con el encabezado */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#busquedaForm button:hover {
+    background-color: #3498db;
+}
+
+#resultados {
+    display: none; /* Oculta inicialmente el contenedor de resultados */
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+#resultados:hover {
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.3); /* Aumenta la sombra al pasar el ratón para un efecto más dramático */
+}
+
+#busquedaForm .form-group input:focus,
+#busquedaForm .form-group select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+#graficaContainer {
+    background-color: #f9f9f9; /* Color de fondo que coincide con el contenedor de resultados */
+    border-radius: 15px; /* Bordes redondeados para coincidir con otros elementos de diseño */
+    padding: 30px; /* Espaciado para coincidir con otros elementos de diseño */
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.2); /* Sombra para coincidir con otros elementos de diseño */
+    transition: box-shadow 0.3s ease; /* Transición suave de la sombra para coincidir con otros elementos de diseño */
+}
+#graficaContainer:hover {
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.3); /* Aumenta la sombra al pasar el ratón para un efecto más dramático, similar a otros elementos de diseño */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.resultado {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Añade una transición suave al transformar y a la sombra */
+    animation: fadeIn 0.5s ease-in;
+    margin: 20px 0;
+}
+
+.resultado:hover {
+    transform: scale(1.02); /* Aumenta ligeramente el tamaño al pasar el ratón para un efecto de "elevación" */
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2); /* Aumenta la sombra al pasar el ratón para un efecto más dramático */
+}
+
+.propiedad {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333; /* Texto más oscuro para mejor contraste */
+    font-weight: normal; /* Cambia a normal para que el texto no esté en negrita */
+}
+
+.propiedad strong {
+    font-weight: bold; /* Texto en negrita para destacar los campos */
+}
+
+.mensaje-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+}
+
+.mensaje-error h3 {
+    margin-top: 0;
+}
+
+.mensaje-error p {
+    margin-bottom: 0;
+}
