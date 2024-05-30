@@ -67,16 +67,21 @@ document.getElementById('busquedaForm').addEventListener('submit', function (e) 
         .catch(error => console.error('Error:', error));
 });
 
+// Variable para controlar si la gráfica está visible o no
 var graficaVisible = false;
+// Variable para almacenar la gráfica
 var myChart = null;
 
+// Función para obtener las comercializadoras y contar cuántas veces aparecen en los datos
 function obtenerComercializadoras(datos) {
     var comercializadoras = {};
     datos.forEach(function (dato) {
         var comercializadora = dato.COMERCIALIZADORA;
+        // Si la comercializadora ya existe en el objeto, incrementa su contador
         if (comercializadora in comercializadoras) {
             comercializadoras[comercializadora]++;
         } else {
+            // Si la comercializadora no existe en el objeto, la añade con un contador de 1
             comercializadoras[comercializadora] = 1;
         }
     });
@@ -84,17 +89,21 @@ function obtenerComercializadoras(datos) {
     return comercializadoras;
 }
 
+// Evento click para el botón de mostrar/ocultar gráfica
 document.getElementById('mostrarGrafica').addEventListener('click', function () {
     var graficaContainer = document.getElementById('graficaContainer');
     var grafica = document.getElementById('grafica');
+    // Si la gráfica está visible, la oculta
     if (graficaVisible) {
         graficaContainer.style.display = 'none';
     } else {
+        // Si la gráfica no está visible, realiza una petición a la API
         fetch('http://192.168.101.4:3000/asesoria_energetica')
             .then(response => response.json())
             .then(datos => {
                 var contratos = obtenerComercializadoras(datos);
-            
+
+                // Prepara los datos para la gráfica
                 var data = {
                     labels: Object.keys(contratos),
                     datasets: [
@@ -157,10 +166,12 @@ document.getElementById('mostrarGrafica').addEventListener('click', function () 
                     ]
                 };
 
+                // Si ya existe una gráfica, la destruye para crear una nueva
                 if (myChart !== null) {
-                    myChart.destroy(); // Destruye la gráfica anterior
+                    myChart.destroy();
                 }
 
+                // Crea la gráfica
                 var ctx = grafica.getContext('2d');
                 myChart = new Chart(ctx, {
                     type: 'bar',
@@ -177,9 +188,11 @@ document.getElementById('mostrarGrafica').addEventListener('click', function () 
                     }
                 });
 
+                // Muestra la gráfica
                 graficaContainer.style.display = 'block';
             })
             .catch(error => console.error('Error:', error));
     }
+    // Cambia el estado de visibilidad de la gráfica
     graficaVisible = !graficaVisible;
 });

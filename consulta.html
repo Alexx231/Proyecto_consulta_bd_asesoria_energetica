@@ -1,30 +1,31 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html> <!-- Define el tipo de documento -->
+<html lang="es"> <!-- Inicio del documento HTML, especifica el idioma en español -->
 
-<head>
-    <title>Examen Alejandro Pawlukiewicz</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="img/icono.webp">
-</head>
+<head> <!-- Inicio de la cabecera del documento -->
+    <title>Examen Alejandro Pawlukiewicz</title> <!-- Título del documento -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> <!-- Enlace a la hoja de estilos de Bootstrap -->
+    <link rel="stylesheet" href="css/styles.css"> <!-- Enlace a la hoja de estilos personalizada -->
+    <link rel="icon" href="img/icono.webp"> <!-- Icono de la página -->
+</head> <!-- Fin de la cabecera del documento -->
 
-<body>
-    <header class="bg-primary text-white p-3">
-        <h1 class="text-center">Gestion Empresarial</h1>
-    </header>
-    <div class="container mt-3">
-        <form id="busquedaForm" class="bg-light p-3 rounded">
-            <h2 class="text-center mb-3">Búsqueda</h2>
-            <div class="form-group">
-                <label for="campo">Campo a buscar</label>
-                <select class="form-control" id="campo" onchange="mostrarCampo()">
-                    <option value="">Selecciona un campo</option>
-                    <option value="cif">CIF</option>
-                    <option value="nombre">Nombre</option>
-                    <option value="estado">Estado</option>
-                    <option value="comercializadora">Comercializadora</option>
+<body> <!-- Inicio del cuerpo del documento -->
+    <header class="bg-primary text-white p-3"> <!-- Inicio del encabezado de la página -->
+        <h1 class="text-center">Gestion Empresarial</h1> <!-- Título de la página -->
+    </header> <!-- Fin del encabezado de la página -->
+    <div class="container mt-3"> <!-- Inicio del contenedor principal -->
+        <form id="busquedaForm" class="bg-light p-3 rounded"> <!-- Inicio del formulario de búsqueda -->
+            <h2 class="text-center mb-3">Búsqueda</h2> <!-- Título del formulario -->
+            <div class="form-group"> <!-- Inicio del grupo de selección de campo -->
+                <label for="campo">Campo a buscar</label> <!-- Etiqueta del selector de campo -->
+                <select class="form-control" id="campo" onchange="mostrarCampo()"> <!-- Selector de campo con evento onchange -->
+                    <option value="">Selecciona un campo</option> <!-- Opción por defecto -->
+                    <option value="cif">CIF</option> <!-- Opción para buscar por CIF -->
+                    <option value="nombre">Nombre</option> <!-- Opción para buscar por nombre -->
+                    <option value="estado">Estado</option> <!-- Opción para buscar por estado -->
+                    <option value="comercializadora">Comercializadora</option> <!-- Opción para buscar por comercializadora -->
                 </select>
-            </div>
+            </div> <!-- Fin del grupo de selección de campo -->
+            <!-- Los siguientes divs son campos de entrada que se muestran dependiendo de la opción seleccionada en el selector de campo -->
             <div id="cif" class="form-group campo-busqueda" style="display: none;">
                 <label for="cif-input">CIF</label>
                 <input type="text" class="form-control" id="cif-input">
@@ -41,19 +42,18 @@
                 <label for="comercializadora-input">Comercializadora</label>
                 <input type="text" class="form-control" id="comercializadora-input">
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Buscar</button>
-            <button type="button" class="btn btn-secondary btn-block" id="mostrarGrafica">Mostrar/Ocultar
-                Gráfica</button>
-        </form>
-    </div>
-    <div class="container mt-3" id="resultados">
+            <button type="submit" class="btn btn-primary btn-block">Buscar</button> <!-- Botón para enviar el formulario -->
+            <button type="button" class="btn btn-secondary btn-block" id="mostrarGrafica">Mostrar/Ocultar Gráfica</button> <!-- Botón para mostrar/ocultar la gráfica -->
+        </form> <!-- Fin del formulario de búsqueda -->
+    </div> <!-- Fin del contenedor principal -->
+    <div class="container mt-3" id="resultados"> <!-- Contenedor para los resultados de la búsqueda -->
         <!-- Los resultados de la búsqueda se insertarán aquí -->
     </div>
-    <div class="container mt-3" id="graficaContainer" style="display: none;">
-        <canvas id="grafica"></canvas>
+    <div class="container mt-3" id="graficaContainer" style="display: none;"> <!-- Contenedor para la gráfica, oculto por defecto -->
+        <canvas id="grafica"></canvas> <!-- Lienzo para la gráfica -->
     </div>
-    <script src="js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</body>
+    <script src="js/script.js"></script> <!-- Enlace al archivo de script personalizado -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Enlace al archivo de script de Chart.js -->
+</body> <!-- Fin del cuerpo del documento -->
 
-</html>
+</html> <!-- Fin del documento HTML -->
